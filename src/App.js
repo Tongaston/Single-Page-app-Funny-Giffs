@@ -1,23 +1,47 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
-import ListOfGifs from './components/ListOfGifs'
+import Home from './pages/Home'
+import SearchResults from './pages/SearchResults'
+import Detail from './pages/Detail'
+import StaticContext from './context/StaticContext'
 
 import { Link, Route } from "wouter";
+import { GifsContextProvider } from './context/GifsContext';
 
 export default function App() {
-  
+
   return (
-    <div className="App">
-      <section className="App-content">
-        <h1>Random Pets App</h1>
-        <Link to="/gif/dogs">Gifs de Perros</Link>
-        <Link to="/gif/cats">Gifs de Gatos</Link>
-        <Link to="/gif/racoon">Gifs de Mapaches</Link>
-        <Route 
-        component={ListOfGifs} 
-        path='/gif/:keyword' />
-      </section>
-    </div>
+    <StaticContext.Provider value={{
+      name: 'GMdev',
+      suscribeteAlCanal: true
+    }}>
+      <div className="App">
+        <section className="App-content">
+
+          <Link to="/">
+            <figure className="App-logo">
+              <img src="./logo.png" alt="Giffy logo" />
+            </figure>
+            <h1 className='title'>Funny Giffy</h1>
+          </Link>
+
+          <GifsContextProvider>
+            <Route
+              component={Home}
+              path='/'
+            />
+            <Route
+              component={SearchResults}
+              path='/search/:keyword'
+            />
+            <Route
+              component={Detail}
+              path='/gif/:id'
+            />
+          </GifsContextProvider>
+        </section>
+      </div>
+    </StaticContext.Provider>
   )
 }
 
