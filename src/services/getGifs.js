@@ -14,7 +14,7 @@ const fromApiResponseToGifs = apiResponse => {
 }
 
 export default function getGifs({
-    limit=25, 
+    limit= 10,
     keyword = 'morty',
     rating = 'g',
     page = 0,
