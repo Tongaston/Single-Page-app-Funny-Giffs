@@ -24,7 +24,7 @@ export default function App() {
             <figure className="App-logo">
               <img src="./logo.png" alt="Giffs logo" />
             </figure>
-            <h1 className='title'>Funny Giffs</h1>
+            <h1 className='title'>Funny GIFs</h1>
           </Link>
 
           <GifsContextProvider>
