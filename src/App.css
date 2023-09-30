@@ -44,13 +44,6 @@
   align-items: flex-start;
 }
 
-.App-wrapper {
-  width: 100%;
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: 0 0.5em;
-}
-
 .App-results {
   flex-shrink: 2;
   width: 100%;
@@ -61,17 +54,19 @@
   width: 100%;
 }
 
-@media screen and (min-width: 55rem) {
+@media screen and (min-width: 640px) {
   .App-main {
     flex-direction: initial;
   }
 
   .App-category {
-    position: sticky;
-    top: var(--search-size-mx-h);
-    width: 40%;
+    position:sticky;
+    padding: 0 2em;
+    width: 80%;
     max-width: 300px;
+    margin-top: 0px;
   }
+
 }
 
 
@@ -80,7 +75,11 @@
   pointer-events: none;
 }
 
-.form-btn:hover {
-  background-color: var(--brand-color_6);
+button:hover {
+  background-color: #551e8d;
   color: white;
+}
+
+.App-results {
+  margin-bottom: 0;
 }
