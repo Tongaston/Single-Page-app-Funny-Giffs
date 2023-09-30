@@ -1,0 +1,36 @@
+.Category-title {
+    color: var(--theme-body-txt);
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .Category-list {
+    list-style-position: inside;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  .Category-link {
+    color: --brand-color_3;
+    font-size: 1em;
+    transition: color ease-in 0.2s;
+  }
+  
+  .Category-link:hover {
+    color: #9933ff;
+  }
+  
+  @media screen and (min-width: 640px) {
+    .Category-list {
+      display: list-item;
+    }
+  
+    .Category-list li::before {
+      color: #8c55a2;
+      margin-right: 0.5em;
+      font-size: 1em;
+    }
+
+    
+  }

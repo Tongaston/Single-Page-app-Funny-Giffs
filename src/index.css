@@ -31,7 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--fz);
-  background-color: rgba(20, 20, 20, 0.881);
+  background-color: var(--theme-body-bg);
   color: var(--theme-body-txt);
 }
 
@@ -39,6 +39,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  background: #9933ff;
+  border: 0;
+  color: black;
+  padding: 8px 30px;
+  font-size: 24px;
+  border-radius: 0 10px 10px 0;
+  transition: color ease-in-out 0.2s;
+  cursor: pointer;
+}
+
 
 
 a {
@@ -49,10 +61,36 @@ a {
 
 ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
+form {
+  display: flex;
+  margin: 15px auto 30px;
+  justify-content: center;;
+}
+
+input[type=text] {
+  border-radius: 10px 0 0 10px;
+  font-size: 24px;
+  border: none;
+  padding: 7px 30px;
+}
+
+
+
+.Category-title {
+  font-size: 1.17em;
+  font-weight: 700;
+  padding: 0;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.Category-link {
+  font-size: 0.9em;
+}
 
 /* -------------------- rf-layout  - Component / header */
 .o-header {
@@ -61,4 +99,17 @@ ul {
   top: 0;
   z-index: var(--zIndex-header);
   max-height: var(--search-size-mx-h);
+}
+
+@media screen and (max-width: 640px) {
+ 
+  input[type=text] {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
 }
