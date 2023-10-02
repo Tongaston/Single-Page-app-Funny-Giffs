@@ -18,30 +18,34 @@ export default function App() {
     }}>
       <div className="App">
         <Suspense fallback={null}>
-        <section className="App-content">
+          <section className="App-content">
 
-          <Link to="/">
-            <figure className="App-logo">
-              <img src="./logo.png" alt="Giffs logo" />
-            </figure>
-            <h1 className='title'>Funny GIFs</h1>
-          </Link>
+            <Link to="/">
+              <figure className="App-logo">
+                <img src="./logo.png" alt="Giffs logo" />
+              </figure>
+              <h1 className='title'>Funny GIFs</h1>
+            </Link>
 
-          <GifsContextProvider>
-            <Route
-              component={HomePage}
-              path='/'
-            />
-            <Route
-              component={SearchResults}
-              path='/search/:keyword'
-            />
-            <Route
-              component={Detail}
-              path='/gif/:id'
-            />
-          </GifsContextProvider>
-        </section>
+            <GifsContextProvider>
+              <Route
+                component={HomePage}
+                path='/'
+              />
+              <Route
+                component={SearchResults}
+                path='/search/:keyword'
+              />
+              <Route
+                component={Detail}
+                path='/gif/:id'
+              />
+              <Route
+                component={() => <h1>404 ERROR :(</h1>}
+                path='/404'
+              />
+            </GifsContextProvider>
+          </section>
         </Suspense>
       </div>
     </StaticContext.Provider>
