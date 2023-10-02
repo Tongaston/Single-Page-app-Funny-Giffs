@@ -4,6 +4,7 @@ import ListOfGifs from '../../components/ListOfGifs'
 import {useGifs} from '../../hooks/useGifs'
 import useNearScreen from '../../hooks/useNearScreen'
 import debounce from 'just-debounce-it'
+import {Helmet} from 'react-helmet'
 
 
 export default function SearchResults({ params }) {
@@ -15,15 +16,14 @@ export default function SearchResults({ params }) {
   once: false})
 
 
-//const handleNextPage = () => setPage(prevPage => prevPage + 1)
-//const handleNextPage = () => console.log('next page')
+const title = gifs ? `${gifs.length} resultados de ${keyword}` : ''
+
 
 const debounceHandleNextPage = useCallback(debounce(
   () => setPage(prevPage => prevPage + 1), 200
 ), [setPage])
 
 useEffect(function () {
-  console.log(isNearScreen)
   if(isNearScreen) debounceHandleNextPage()
 }, [debounceHandleNextPage, isNearScreen])
 
@@ -32,11 +32,19 @@ useEffect(function () {
     {loading
       ? <Spinner />
       : <>
+      <Helmet>
+        <title>{title} || Funny GIFs</title>
+        <meta name="description" content={title} />
+        <meta name="rating" content="General" />
+        <meta name="referrer" content="no-referrer" />
+      </Helmet>
+      <div className="App-wrapper">
       <h3 className="App-title">
         {decodeURI(keyword)}
         </h3>
        <ListOfGifs gifs={gifs} />
-       <div id='visor' ref={externalRef}> 	</div>
+       <div id='visor' ref={externalRef}></div>
+        </div>
       </>
     } 
   </>

@@ -6,11 +6,11 @@ const fromApiResponseToGifs = apiResponse => {
     return data
 }
 
-export default function getTRendingTerms() {
+export default function getTRendingTerms({ signal }) {
     const urlAPI = `${API_URL}/trending/searches?api_key=${API_KEY}`
 
     
-    return fetch(urlAPI)
+    return fetch(urlAPI, { signal })
         .then(res => res.json())
         .then(fromApiResponseToGifs)
            
