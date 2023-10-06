@@ -22,7 +22,7 @@ export default function App() {
 
             <Link to="/">
               <figure className="App-logo">
-                <img src="./logo.png" alt="Giffs logo" />
+                <img src="./logo.png" alt="Funny GIFs logo" />
               </figure>
               <h1 className='title'>Funny GIFs</h1>
             </Link>
@@ -34,7 +34,7 @@ export default function App() {
               />
               <Route
                 component={SearchResults}
-                path='/search/:keyword'
+                path='/search/:keyword/:rating?'
               />
               <Route
                 component={Detail}
