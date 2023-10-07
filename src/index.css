@@ -43,12 +43,14 @@ code {
 button {
   background: #9933ff;
   border: 0;
-  color: black;
+  color: rgba(0, 0, 0, 0.791);
   padding: 8px 30px;
   font-size: 24px;
+  font-weight: 500;
   border-radius: 0 10px 10px 0;
   transition: color ease-in-out 0.2s;
   cursor: pointer;
+  box-shadow: 10px 3px 22px 0 rgba(0, 0, 0, 0.514);
 }
 
 
@@ -71,11 +73,26 @@ form {
   justify-content: center;;
 }
 
+.form-select {
+  border-radius: 10px 10px;
+  font-size: 22px;
+  font-weight: 600;
+  border: none;
+  padding: 7px 5px;
+  margin-left: 15px;
+  color: black;
+  transition: color ease-in-out 0.2s;
+  cursor: pointer;
+  background-color: var(--brand-color_1);
+  box-shadow: 10px 3px 22px 0 rgba(0, 0, 0, 0.514);
+}
+
 input[type=text] {
   border-radius: 10px 0 0 10px;
   font-size: 24px;
   border: none;
   padding: 7px 30px;
+  box-shadow: -4px 3px 22px 0 rgba(0, 0, 0, 0.514);
 }
 
 
@@ -93,13 +110,15 @@ input[type=text] {
 }
 
 /* -------------------- rf-layout  - Component / header */
-.o-header {
+ .o-header {
   background-color: inherit;
   position: sticky;
   top: 0;
   z-index: var(--zIndex-header);
   max-height: var(--search-size-mx-h);
-}
+} 
+
+
 
 @media screen and (max-width: 640px) {
  
@@ -111,5 +130,37 @@ input[type=text] {
   button {
     padding: 8px 16px;
     font-size: 16px;
+  }
+ .form-select {
+    padding: 8px ;
+    font-size: 12px;
+    width: 80px;
+    
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  
+  input[type=text] {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+ .form-select {
+    padding: 4px ;
+    font-size: 12px;
+    width: 50px;
+    
+  }
+
+  form {
+    display: flex;
+    margin: 5px auto 15px;
+    justify-content: center;;
   }
 }

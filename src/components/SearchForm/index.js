@@ -7,14 +7,19 @@ const RATINGS = ["g", "pg", "pg-13", "r"];
 
 function SearchForm({
     initialKeyword = '',
-    initialRating = 'g',
+    initialRating = RATINGS[0],
 }) {
-    const { keyword, rating, times, updateKeyword, updateRating } = useForm({
+    const [_, pushLocation] = useLocation()
+
+    const { keyword, rating, updateKeyword, updateRating } = useForm({
         initialKeyword,
         initialRating,
     });
 
-    const [_, pushLocation] = useLocation()
+    const onSubmit = ({ keyword }) => {
+        // navegar a otra ruta
+        pushLocation(`/search/${keyword}/${rating}`)
+    }
 
     const handleChange = (evt) => {
         updateKeyword(evt.target.value)
@@ -22,8 +27,7 @@ function SearchForm({
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
-        // navegar a otra ruta
-        pushLocation(`/search/${keyword}/${rating}`)
+      onSubmit({ keyword })
     }
 
     const handleChangeRating = (evt) => {
@@ -45,7 +49,7 @@ function SearchForm({
                     <option key={rating}>{rating}</option>
                 ))}
             </select>
-            <small>{times} veces</small>
+            {/* <small>{times} veces</small> */}
         </form>
     )
 }
