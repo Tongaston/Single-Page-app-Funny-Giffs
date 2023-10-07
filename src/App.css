@@ -15,7 +15,8 @@
 
 .App-title {
   color: var(--theme-body-txt);
-  margin-top: 0.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -61,22 +62,6 @@
   width: 100%;
 }
 
-@media screen and (min-width: 640px) {
-  .App-main {
-    flex-direction: initial;
-  }
-
-  .App-category {
-    position:sticky;
-    padding: 0 2em;
-    width: 80%;
-    max-width: 300px;
-    margin-top: 0px;
-  }
-
-}
-
-
 .form-btn[disabled] {
   opacity: .3;
   pointer-events: none;
@@ -89,4 +74,112 @@ button:hover {
 
 .App-results {
   margin-bottom: 0;
+}
+
+/*Media Queries*/
+
+@media screen and (min-width: 640px) {
+  .App-main {
+    flex-direction: initial;
+  }
+
+  .App-category {
+    position:sticky;
+    padding: 0 2em;
+    width: 80%;
+    max-width: 300px;
+    margin-top: 0px;
+  }  
+}
+
+@media screen and (max-width: 480px) {
+  .App-logo img {
+    padding: 10px 0;
+    width: 60%;
+  }
+
+  .App-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .App-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .page-error { 
+    padding: 1rem;
+    margin-top: 10px;
+  }
+
+  .btn {
+    
+    padding: 4px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .page-error .msg-error {
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+  }
+  
+  .page-error .gif-error {
+    margin: 0.5rem auto;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/*Pagina de Error 404*/
+
+.btn {
+  background: #9933ff;
+  border: 0;
+  color: rgba(0, 0, 0, 0.791);
+  padding: 8px 30px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: color ease-in-out 0.2s;
+  cursor: pointer;
+  box-shadow: 10px 3px 22px 0 rgba(0, 0, 0, 0.514);
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: #551e8d;
+  color: white;
+}
+
+.page-error { 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.page-error .code-error {
+  font-size: 5rem;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--brand-color_5);
+}
+
+.page-error .msg-error {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: var(--brand-color_5);
 }
