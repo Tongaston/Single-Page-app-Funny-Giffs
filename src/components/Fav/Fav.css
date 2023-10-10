@@ -1,0 +1,22 @@
+.gf-Fav {
+    background: var(--brand-color_2);
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+  }
+  
+  .gf-Fav:hover {
+    background: var(--brand-color_2);
+  }
+  
+  .gf-Fav span {
+    display: block;
+    width: 30px;
+    margin: 0 
+  }
