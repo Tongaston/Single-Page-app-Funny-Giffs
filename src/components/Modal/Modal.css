@@ -1,0 +1,36 @@
+.modal {
+    background-color: rgba(255, 255, 255, .8);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+  
+  .modal-content {
+    background: hsla(0, 0%, 0%, 0.8);
+    width: 320px;
+    padding: 10px 20px;
+    height: 60vh;
+    margin: 15vh auto;
+    position: relative;
+    z-index: 9;
+    border-radius: 5px;
+    box-shadow: 0 0 19px 5px black;
+  }
+  
+  .modal-content .btn {
+    width: 20%;
+    padding: 0.7rem;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: tomato;
+    cursor: pointer;
+    margin-bottom: 40px;
+  }
+
+  .modal-content .btn:hover {
+    background-color: rgb(190, 66, 44);
+  } 

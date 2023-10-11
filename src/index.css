@@ -70,7 +70,9 @@ ul {
 form {
   display: flex;
   margin: 15px auto 30px;
-  justify-content: center;;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
 }
 
 .form-select {
@@ -87,7 +89,7 @@ form {
   box-shadow: 10px 3px 22px 0 rgba(0, 0, 0, 0.514);
 }
 
-input[type=text] {
+.form-input {
   border-radius: 10px 0 0 10px;
   font-size: 24px;
   border: none;
@@ -114,7 +116,7 @@ input[type=text] {
   background-color: inherit;
   position: sticky;
   top: 0;
-  z-index: var(--zIndex-header);
+  z-index: 4;
   max-height: var(--search-size-mx-h);
 } 
 
@@ -122,7 +124,7 @@ input[type=text] {
 
 @media screen and (max-width: 640px) {
  
-  input[type=text] {
+  .form-input {
     padding: 8px 16px;
     font-size: 16px;
   }
@@ -142,7 +144,7 @@ input[type=text] {
 @media screen and (max-width: 480px) {
 
   
-  input[type=text] {
+  .form-input {
     padding: 4px 8px;
     font-size: 12px;
   }

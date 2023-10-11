@@ -1,6 +1,7 @@
 .gf-header {
     display: flex;
     justify-content: flex-end;
+    
   }
   
   .gf-header a {
@@ -10,7 +11,7 @@
     background-color: var(--brand-color_5);
     padding: 10px 30px;
     border-radius: 10px;
-    margin: 10px 40px;
+    margin: 10px 35px 10px 0px;; 
     transition: all ease-in 0.2s;
   }
   
