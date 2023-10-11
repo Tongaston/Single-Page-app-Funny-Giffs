@@ -6,7 +6,6 @@ import useNearScreen from '../../hooks/useNearScreen'
 import debounce from 'just-debounce-it'
 import { Helmet } from 'react-helmet'
 import SearchForm from '../../components/SearchForm'
-import { Link } from 'wouter'
 
 
 export default function SearchResults({ params }) {

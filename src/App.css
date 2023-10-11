@@ -138,6 +138,11 @@ button:hover {
     margin-top: 10px;
   }
 
+  .btn[disabled] {
+    opacity: .3;
+    pointer-events: none;
+  }
+
   .page-error .msg-error {
     font-size: 0.7rem;
     margin: 0.5rem 0;
